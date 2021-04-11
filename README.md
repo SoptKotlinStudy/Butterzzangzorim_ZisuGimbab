@@ -4,7 +4,7 @@
 
 ## MainActivity
 
-![image](https://user-images.githubusercontent.com/70841402/114307107-24463280-9b19-11eb-95d1-95bc689a0c12.png)
+![image](https://user-images.githubusercontent.com/70841402/114308810-092af100-9b20-11eb-9896-578c3fa4d6fd.png)
 
 * **ConstraintLayout**을 이용하여 '이름 입력 뷰 그룹', '깃허브 아이디 뷰 그룹', 그리고 '비밀번호 뷰 그룹'으로 나누어 구성했다.
 * 로그인 버튼을 눌렀을 때, 
