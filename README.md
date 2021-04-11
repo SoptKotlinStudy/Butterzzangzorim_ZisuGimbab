@@ -24,11 +24,9 @@
             }
         }
     }
+        
+  -   companion object {private const val SIGN_UP_RESULT_CODE = 100}
     
-    companion object {
-    
-        private const val SIGN_UP_RESULT_CODE = 100
-    }
   - requestCode 는 임의적으로 선언을 했다.
 
 
