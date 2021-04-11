@@ -91,6 +91,9 @@ override fun onStart() {
 
 ![image](https://user-images.githubusercontent.com/70841402/114308219-0fb86900-9b1e-11eb-8005-ff4a5cbdd5ea.png)
 
+![image](https://user-images.githubusercontent.com/70841402/114309116-15637e00-9b21-11eb-8097-ae4122ebf8cf.png)
+
+
 1차 과제 수행할 때에는 잘 돌아갔던(?) 프로젝트가 2차 세미나를 들으면서 덮어씌우자 맛이 가버려서 로그를 캡쳐할 수 없었다...
 
 (추후에 해결해서 다시 올리겠습니다.)
