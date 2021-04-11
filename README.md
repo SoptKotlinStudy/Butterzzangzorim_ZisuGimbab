@@ -12,20 +12,14 @@
   - 반대로 둘 중 어느 것이라도 비어있으면 **Toast**로 '아이디/비밀번호를 확인해주세요!'라는 문자를 띄운다.
   - 비밀번호 입력시, **android:inputType="textPassword"** 를 이용하여 입력 내용이 가려지도록 했다.
 * 회원가입 텍스트를 눌렀을 때, 
-  - **onActivityResult**를 이용하여 SignUpActivity로 이동한다.
-  -     override fun onActivityResult(requestCode : Int, resultCode: Int,data:Intent?){
-        super.onActivityResult(requestCode, resultCode, data)
-        if(resultCode == Activity.RESULT_OK){
-            when(requestCode){
-                100-> {
-                    binding.loginIdInput.setText(data!!.getStringExtra("id"))
-                    binding.loginPasswordInput.setText(data!!.getStringExtra("pwd"))
-                }
-            }
+  - SignUpActivity로 이동한다.
+  
+  private fun joinButtonClickEvent() {
+        binding.joinButton.setOnClickListener {
+            val intent = Intent(this, SignUpActivity::class.java)
+            startActivity(intent)
         }
-    }        
-  -   companion object {private const val SIGN_UP_RESULT_CODE = 100}
-  - requestCode 는 임의적으로 선언을 했다.
+    }
 
 ## SignUpActivity
 
@@ -49,6 +43,22 @@
 ## 1. 화면전환 후 데이터를 가져온 로직 정리
 
 SignUpActivity에서 MainActivity로 화면전환할 때, SignUpActivity의 '이름 EditText', '깃허브 아이디 EditText'와 '비밀번호 EditText'에 입력된 데이터를 MainActivity로 전달해야 한다. 이를 위해, onActivityResult 함수를 이용해서 requestCode가 100인 경우, Activity.RESULT_OK이면 입력한 String값을 받아와서 MainActivity의 '깃허브 아이디 EditText'와 '비밀번호 EditText'에 입력되도록 했다.
+
+    override fun onActivityResult(requestCode : Int, resultCode: Int,data:Intent?){
+        super.onActivityResult(requestCode, resultCode, data)
+        if(resultCode == Activity.RESULT_OK){
+            when(requestCode){
+                100-> {
+                    binding.loginIdInput.setText(data!!.getStringExtra("id"))
+                    binding.loginPasswordInput.setText(data!!.getStringExtra("pwd"))
+
+                }
+            }
+        }
+    }
+    companion object {
+        private const val SIGN_UP_RESULT_CODE = 100
+    }
 
 ## 2. 생명주기를 호출하고 다른 엑티비티를 호출하면 어떻게 되나?
 
